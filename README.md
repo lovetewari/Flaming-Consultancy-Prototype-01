@@ -2,7 +2,7 @@ Flaming Consultancy Web App
 
 Welcome to the Flaming Consultancy web application! Our web app offers various consultancy and health-related services to help you maintain optimal physical and mental health.
 
-Features
+Feature's
 
 Medical Consultancy
 Our medical consultancy feature enables users to receive professional medical advice and treatment from experienced healthcare professionals. We have a team of qualified doctors, nurses, and specialists who are dedicated to providing you with the best healthcare services.
