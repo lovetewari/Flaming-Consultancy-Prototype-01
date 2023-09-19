@@ -1,34 +1,36 @@
-document.querySelector("button").addEventListener("click",signIn);
-var usersdetail = JSON.parse(localStorage.getItem("userData"));
+document.addEventListener("DOMContentLoaded", function() {
+    // Event listener for the form submission
+    document.querySelector("#signupForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting by default
 
-function signIn()
-{
-    var email = document.querySelector("#numEmail").value;
-    var password = document.querySelector("#pass").value;
-    flag = false;
-    if(email=="admin" && password=="admin"){
-        document.querySelector("#email").value = "";
-        document.querySelector("#password").value = "";
-        window.location.href = "admin.html" ;
-        alert("Successfully Login");
-    }
-    else {
-        for(var i=0 ; i<usersdetail.length ; i++)
-        {
-            if(usersdetail[i].email===email && usersdetail[i].password===password && email!=="" && password!==""){
-                document.querySelector("#numEmail").value = "";
-                document.querySelector("#pass").value = "";
-                window.location.href = "landing_page.html";
-                flag = true;
-                break;
-            }
-        }
-        if(flag)
-        {
-            alert("Successfully Login");
-        }
-        else{
-            alert("Your Email Or Password Invalid");
-        }
-    }
-}
+        // Get user input values
+        var numEmail = document.querySelector("#numEmail").value;
+        var number = document.querySelector("#number").value;
+        var password = document.querySelector("#pass").value;
+
+        // Clear input fields
+        document.querySelector("#numEmail").value = "";
+        document.querySelector("#number").value = "";
+        document.querySelector("#pass").value = "";
+
+        // Create a user object
+        var userDetail = {
+            email: numEmail,
+            number: number,
+            password: password,
+        };
+
+        // Retrieve existing user data from local storage or initialize an empty array
+        var userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+        // Add the new user to the data array
+        userData.push(userDetail);
+
+        // Store the updated user data in local storage
+        localStorage.setItem("userData", JSON.stringify(userData));
+
+        // Alert the user and redirect to the login page
+        alert("Registration successful. Please log in.");
+        window.location.href = "login.html";
+    });
+});
