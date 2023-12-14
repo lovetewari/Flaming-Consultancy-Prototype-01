@@ -1,8 +1,8 @@
-Removed duplicate height property in #loginbutton.
+/* Removed duplicate height property in #loginbutton.
 Cleaned up unnecessary comments.
 Consolidated properties in #loginbutton for better readability.
 Removed unnecessary flex-wrap: nowrap; from .navigationbar since it's the default behavior.
-Adjusted the media query for better responsiveness by changing (min-width: 0) to (max-width: 955px).
+Adjusted the media query for better responsiveness by changing (min-width: 0) to (max-width: 955px). */
 
 body {
     background-color: hsl(0, 0%, 100%);
